@@ -1,0 +1,124 @@
+@mixin retina {
+
+  @media (min-resolution: $retina-dpi),
+  (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+
+@mixin vp-1919 {
+  @media (max-width: $vp-1920 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1439 {
+  @media (max-width: $vp-1440 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1279 {
+  @media (max-width: $vp-1280 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-1023 {
+  @media (max-width: $vp-1024 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: $vp-768 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-374 {
+  @media (max-width: $vp-375 - 1) {
+    @content;
+  }
+}
+
+// Mobile first
+
+// @mixin vp-375 {
+//   @media (min-width: $vp-375) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-768 {
+//   @media (min-width: $vp-768) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-1024 {
+//   @media (min-width: $vp-1024) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-1280 {
+//   @media (min-width: $vp-1280) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-1440 {
+//   @media (min-width: $vp-1440) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-1920 {
+//   @media (min-width: $vp-1920) {
+//     @content;
+//   }
+// }
+
+// ---------------------------------
+
+// не нужно добавлять свои миксины для ресета списков, обнуления кнопок и прочие
+// этим вы усложняете работу команды, проверку вашего кода и будущую поддержку проекта
+
+// fonts
+
+@mixin fontSize($b, $m) {
+  $sizeB: $b + px;
+  $sizeM: $m + px;
+
+  @media only screen and (min-width: 998px) {
+    font-size: $sizeB;
+  }
+
+  @media only screen and (max-width: 997px) {
+    font-size: calc(#{$sizeM} + (#{$b} - #{$m}) * ((100vw - 360px) / (997 - 360)));
+  }
+
+  @media (max-width: 360px) {
+    font-size: $sizeM;
+  }
+}
+
+@mixin fontSizeBanner($b, $m) {
+  $sizeB: $b + px;
+  $sizeM: $m + px;
+
+  @media only screen and (min-width: 1166px) {
+    font-size: $sizeB;
+  }
+
+  @media only screen and (max-width: 1165px) {
+    font-size: calc(#{$sizeM} + (#{$b} - #{$m}) * ((100vw - 360px) / (1165 - 360)));
+  }
+
+  @media (max-width: 360px) {
+    font-size: $sizeM;
+  }
+}

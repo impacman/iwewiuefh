@@ -1,0 +1,27 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Dating Group" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.page(data-page)
+    .page__wrapper
+      .page__screen.page__screen_full
+        +banner()
+      .page__screen
+        +products()
+      .page__screen
+        +payouts()
+      .page__screen
+
+block modals
+  +modal("modal--terms")(data-modal="terms")
+    +modal-terms()
+  +modal("modal--privacy")(data-modal="privacy")
+    +modal-privacy()

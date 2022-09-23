@@ -1,0 +1,39 @@
+.descr {
+  line-height: 140%;
+  color: #FFFFFF;
+  @include fontSize(18, 15);
+
+  opacity: 0;
+  transform: translate(0, 120%);
+  transition: all .5s ease .15s;
+
+  &.anim {
+    opacity: 1;
+    transform: translate(0)
+  }
+
+  &_blue {
+    color: #112168;
+  }
+
+  &_banner {
+    @media only screen and (min-width: 412px) {
+      max-width: 272px;
+    }
+
+    @include fontSizeBanner(18, 15);
+
+    opacity: 0;
+    transform: translate(0, 120%);
+    transition: all .5s ease .4s;
+
+    &.anim {
+      opacity: 1;
+      transform: translate(0)
+    }
+  }
+
+  &_payouts {
+    max-width: 343px;
+  }
+}

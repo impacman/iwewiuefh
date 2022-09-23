@@ -1,0 +1,82 @@
+.banner {
+  background: linear-gradient(252.71deg, #0F1D5C 19.67%, #1E3497 61.67%, #132677 96.41%);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background-image: url('../img/banner/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media only screen and (min-width: 992px) {
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 778px;
+      height: 577px;
+    }
+
+    @media only screen and (min-width: 701px) {
+      top: 110px;
+      max-width: 700px;
+      height: 522px;
+    }
+
+    @media only screen and (max-width: 700px) {
+      top: 83px;
+      max-width: 84%;
+      height: auto;
+      padding-bottom: 62%;
+    }
+
+    @media only screen and (max-width: 575px) {
+      background-image: url('../img/banner/bg-mobile.png');
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (min-width: 1025px) {
+      padding-bottom: 180px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      padding-bottom: 130px;
+    }
+
+    @media only screen and (max-width: 575px) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__wrap-links {
+    display: flex;
+
+    @media only screen and (min-width: 576px) {
+      align-items: center;
+      margin-top: 73px;
+
+      & a:first-child {
+        margin-right: 24px;
+      }
+    }
+
+    @media only screen and (max-width: 575px) {
+      flex-direction: column;
+      margin-top: 35px;
+
+      & a:first-child {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}

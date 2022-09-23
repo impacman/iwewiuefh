@@ -1,0 +1,37 @@
+.page {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__screen {
+    min-height: auto;
+    position: relative;
+
+    &_full {
+      @media only screen and (min-width: 767px) {
+        min-height: 100vh;
+      }
+
+      @media only screen and (max-width: 768px) {
+        min-height: calc(100vh - 75px);
+      }
+
+      & section {
+        @media only screen and (min-width: 767px) {
+          padding-top: 65px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          padding-top: 75px;
+        }
+      }
+    }
+  }
+
+  section {
+    overflow: hidden;
+    min-height: inherit;
+  }
+}

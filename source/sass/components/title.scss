@@ -1,0 +1,60 @@
+.title {
+  font-weight: bold;
+  font-size: 64px;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+
+  opacity: 0;
+  transform: translate(0, 120%);
+  transition: all .5s ease .1s;
+
+  &.anim {
+    opacity: 1;
+    transform: translate(0)
+  }
+
+  &_blue {
+    color: #112168;
+  }
+
+  &_banner {
+    @include fontSizeBanner(64, 36);
+
+    opacity: 0;
+    transform: translate(0, 120%);
+    transition: all .5s ease .3s;
+
+    &.anim {
+      opacity: 1;
+      transform: translate(0)
+    }
+  }
+
+  &_min {
+    @include fontSize(40, 24);
+  }
+
+  &_big {
+    @include fontSize(64, 36);
+  }
+
+  &_center {
+    text-align: center;
+  }
+
+  &_mb {
+    &-13 {
+      margin-bottom: 13px;
+    }
+
+    &-28 {
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 28px;
+      }
+
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
